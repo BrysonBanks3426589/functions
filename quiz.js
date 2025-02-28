@@ -2,14 +2,14 @@
 var questions = [
     "Who is Batman?",
     "What is texas known for?",
-    "Who is my favorite brawler in brawl stars? (hint: she's in the same trio as Bo and Leon)"
+    "Who is my favorite brawler in brawl stars? (hint: she's in the same trio as Bo and Leon)",
 ];
 
 
 var answers = [
     "Bruce Wayne",
     "Cowboys",
-    "Nita"
+    "Nita",
 ];
 
 
@@ -31,7 +31,8 @@ function quiz() {
                 points = guesses;
                 alert(`Correct! You earned ${points} points for this question.`);
                 break; 
-            } else {
+            } 
+            else {
                 guesses--; 
                 if (guesses > 0) {
                     alert(`Incorrect. You have ${guesses} attempt(s) remaining.`);
@@ -47,4 +48,4 @@ function quiz() {
 
     
     return score;
-}
+}; 
