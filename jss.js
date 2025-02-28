@@ -8,44 +8,39 @@ var questions = [
 
 var answers = [
     "Bruce Wayne",
-    "Cowboys",
+    "Barbecue",
     "Nita",
 ];
 
+var currentQuestion = 0;
+var score = 0;
 
-function quiz() {
-    var score = 0; 
 
-    
-    for (var i = 0; i < questions.length; i++) {
-        var guesses = 3; 
-        var points = 0; 
-
+function displayQuestion() {
+    var quizDiv = document.getElementById("quiz");
+    if (currentQuestion < questions.length) {
+        quizDiv.innerHTML = `
+            <p>${questions[currentQuestion]}</p>
+            <input type="text" id="user-answer" placeholder="Your answer">
+            <button onclick="checkAnswer()">Submit</button>
+        `;
+    } else {
         
-        while (guesses > 0) 
-            var userAnswer = prompt(questions[i]);
-
-            
-            if (userAnswer.toLowerCase() === answers[i].toLowerCase()) {
-                
-                points = guesses;
-                alert(`Correct! You earned ${points} points for this question.`);
-                break; 
-            } 
-            else {
-                guesses--; 
-                if (guesses > 0) {
-                    alert(`Incorrect. You have ${guesses} attempt(s) remaining.`);
-                } else {
-                    alert(`Sorry, the correct answer is: ${answers[i]}.`);
-                }
-            }
-        }
-
-        
-        score += points;
+        quizDiv.innerHTML = "";
+        document.getElementById("result").innerHTML = `
+            <p>Your final score is: <span class="score">${score}</span></p>
+        `;
     }
+}
 
-    
-    return score;
 
+function checkAnswer() {
+    var userAnswer = document.getElementById("user-answer").value.trim();
+    if (userAnswer.toLowerCase() === answers[currentQuestion].toLowerCase()) {
+        score += 3; 
+    }
+    currentQuestion++; 
+    displayQuestion(); 
+}
+
+displayQuestion();
