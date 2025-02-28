@@ -5,24 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Quiz</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="jss.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <h1>Trivia Quiz</h1>
-        <div id="quiz-result"></div>
+        <div id="quiz"></div>
+        <div id="result"></div>
     </div>
-
- 
     
-    <script>
-        
-        var score = quiz();
-
-        
-        document.getElementById("quiz-result").innerHTML = `
-            <p>Your final score is: <span class="score">${score}</span></p>
-        `;
-    </script>
+    <script src="jss.js"></script>
 </body>
 </html>
