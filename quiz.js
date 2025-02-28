@@ -48,4 +48,3 @@ function quiz() {
 
     
     return score;
-}; 
