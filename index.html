@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Trivia Quiz</h1>
+        <div id="quiz-result"></div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="quiz.js"></script>
+    <script>
+        
+        var score = quiz();
+
+        
+        document.getElementById("quiz-result").innerHTML = `
+            <p>Your final score is: <span class="score">${score}</span></p>
+        `;
+    </script>
+</body>
+</html>
